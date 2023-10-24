@@ -1,0 +1,201 @@
+def getGitBranchName() { 
+    return scm.branches[0].name
+}
+
+def branchName
+def targetBranch
+
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_USERNAME = "riadhbellazreg"
+         DEV_TAG = "${DOCKERHUB_USERNAME}/frontclient:fcr-front-dev"
+        STAGING_TAG = "${DOCKERHUB_USERNAME}/frontclient:fcr-front-staging"
+        PROD_TAG = "${DOCKERHUB_USERNAME}/frontclient:fcr-front-prod"
+        TEST_TAG = "${DOCKERHUB_USERNAME}/frontclient:fcr-front-test"
+    }
+
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: "${scm.branches[0].name}", description: 'Git branch name')
+        string(name: 'CHANGE_ID', defaultValue: '', description: 'Git change ID for merge requests')
+        string(name: 'CHANGE_TARGET', defaultValue: '', description: 'Git change ID for the target merge requests')
+    }
+
+    stages {
+        stage('branch name') {
+            steps {
+                script {
+                    branchName = params.BRANCH_NAME
+                    echo "Current branch name: ${branchName}"
+                }
+            }
+        }
+
+        stage('target branch') {
+            steps {
+                script {
+                    targetBranch = branchName
+                    echo "Current branch name: ${targetBranch}"
+                }
+            }
+        }
+	    
+        stage('Git Checkout') {
+            steps {
+                git branch: 'devops', credentialsId: '76ad17a0-fbdd-4e27-a738-aae7230a9c5d', url: 'https://github.com/ipactconsult/fcr-client'
+                echo 'GIT CHECKOUT DONE !!!!!!!!'
+            }
+        }
+
+        stage('Clean Build') {
+            steps {
+                sh 'rm -rf node_modules'
+                echo 'CLEAN BUILD DONE !!!!!!!!!'
+            }
+        }
+
+        stage('Install dependencies') {
+            steps {
+                nodejs('nodeJSInstallationName') {
+                    
+                    sh 'npm install --legacy-peer-deps'
+                    sh 'npm install webpack --legacy-peer-deps'
+                }
+            }
+        }
+
+	//     stage('Static Test with Sonar') {
+	// 	    when {
+ //                expression {
+ //                    (params.CHANGE_ID != null) && ((targetBranch == 'develop') || (targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'devops'))
+ //                }
+ //            }
+ //             steps{
+ //                nodejs('nodeJSInstallationName'){
+ //                    sh 'node sonar-project.js'
+ //                }
+ //            }
+	// }
+	    
+
+        stage('Docker Login') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: '23718919-cefd-45a2-a6b8-3b5a54dbdd44', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                    sh "docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}"
+			echo 'haya '
+                }
+            }
+        }
+        
+        stage('Build Docker') {
+            when {
+                expression {
+                    (params.CHANGE_ID != null)  && ((targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'develop') || (targetBranch == 'devops'))
+                }
+            }
+            steps {
+                script {
+                    if (targetBranch == 'staging') {
+                        sh "docker build -t ${STAGING_TAG} ."
+                    } else if (targetBranch == 'main') {
+                        sh "docker build -t ${PROD_TAG} ."
+                    } else if (targetBranch == 'develop') {
+                        sh "docker build -t ${DEV_TAG} ."
+                    } else if (targetBranch == 'devops') {
+                        sh "docker build -t ${TEST_TAG} ."
+			    echo "${TEST_TAG}"
+                    }
+                    
+                }
+            }
+        }
+
+	     stage('Docker Push'){
+	when {
+       	     expression {
+          	(params.CHANGE_ID != null)  && ((targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'develop') || (targetBranch == 'devops'))
+        }
+    }
+            steps{
+                //sh 'docker push riadhbellazreg/frontclient --all-tags '
+		sh 'docker push $DOCKERHUB_USERNAME/frontclient --all-tags '
+		echo "test Docker puch"
+            }
+        }
+
+     
+	    
+	stage('Remove Containers') {
+		steps {
+        sh '''
+        container_ids=$(docker ps -q --filter "publish=3030/tcp")
+        if [ -n "$container_ids" ]; then
+            echo "Stopping and removing containers..."
+            docker stop $container_ids
+            docker rm -f $container_ids
+        else
+            echo "No containers found using port 3030."
+        fi
+	docker rmi $(docker images -q $DOCKERHUB_USERNAME/frontclient)
+        '''
+    }
+}
+
+        stage('Deploy to Prod') {
+		 when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'main')
+		}
+            }
+           steps {
+		// sh "docker pull ${PROD_TAG}"
+  //  		sh "docker run -d --name prod -p 3030:3030 ${PROD_TAG}"
+		   // sh "docker run -p 8083:8083 riadhbellazreg/frontclient:prod"
+		   // sh "docker pull ${PROD_TAG}"
+     //   		   sh "docker run -d --name prod -p 3030:3030 riadhbellazreg/frontclient:latest"
+		   sh "sudo ansible-playbook ansible/k8s.yml -i ansible/inventory/host.yml"
+
+	   }
+	}
+
+
+	stage('Deploy to Dev') {
+  		 when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'develop')
+		}
+            }
+            steps {
+		// sh "docker pull ${DEV_TAG}"
+  //               sh "docker run -d --name fcr-front-dev -p 3030:3030 ${DEV_TAG}"
+		    sh "sudo ansible-playbook ansible/k8s.yml -i ansible/inventory/host.yml"
+            }
+        }
+
+        stage('Deploy to Staging') {
+  		 when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'staging')
+		}
+            }
+            steps {
+		sh "docker pull ${STAGING_TAG}"
+                sh "docker run -d --name fcr-front-staging -p 3030:3030 ${STAGING_TAG} ."
+            }
+        }
+	    
+        stage('Deploy to Testing') {
+             when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'devops')
+		}
+            }
+            steps {
+		// sh "docker pull ${TEST_TAG}"
+  //               sh "docker run -d --name fcr-front-test -p 8079:3000 ${TEST_TAG}"
+		    sh "sudo ansible-playbook ansible/k8s.yml -i ansible/inventory/host.yml"
+            }
+        }
+    }
+}

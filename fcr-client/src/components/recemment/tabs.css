@@ -1,0 +1,41 @@
+/* styles.css (ou votre fichier CSS) */
+.custom-tab-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+
+.custom-tab {
+  margin: 0 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(163, 160, 160); /* Couleur des onglets inactifs */
+  font-weight: 500;
+}
+
+.custom-tab:focus {
+  outline: none;
+}
+
+
+.custom-tab.react-tabs__tab--selected {
+  color: black; 
+  border-bottom: 2px solid  rgb(228, 112, 186) ;
+
+  animation: underlineAnimation 0.7s ease-in-out; 
+}
+
+@keyframes underlineAnimation {
+  0% {
+      transform: scaleX(0);
+  }
+  50% {
+      transform: scaleX(1);
+  }
+ 
+}

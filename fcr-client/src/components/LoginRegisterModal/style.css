@@ -1,0 +1,186 @@
+
+.registration-form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+}
+.registration-form-container h2 {
+  color: #f1bce3;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.registration-form-container a {
+  color: black;
+  font-size: 16px;
+}
+
+.registration-form-container label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.registration-form-container input[type="email"],
+.registration-form-container input[type="address"],
+.registration-form-container input[type="password"],
+.registration-form-container input[type="text"],
+.registration-form-container input[type="tel"],
+.registration-form-container input[type="date"] {
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form-container input[type="email"]:focus,
+.registration-form-container input[type="password"]:focus,
+.registration-form-container input[type="text"]:focus,
+.registration-form-container input[type="tel"]:focus,
+.registration-form-container input[type="date"]:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form-container .gender-radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.registration-form-container .gender-radio-buttons label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+.registration-form-container .gender-radio-buttons label input[type="radio"] {
+  margin-right: 5px;
+}
+
+.registration-form-container label.checkbox-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #f1bce3;
+}
+.registration-form-container label.checkbox-label input[type="checkbox"] {
+  margin-right: 5px;
+}
+#news {
+  display: flex;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+.registration-form-container button[type="submit"] {
+  background-color: #f1bce3;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.registration-form-container .forgot-password-link {
+  text-align: center;
+}
+.registration-form-container .social-buttons-container {
+  align-items: center;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+.registration-form-container .social-buttons-container button {
+  background-color: #fff;
+  border: 2px solid #f1bce3;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 20px;
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.registration-form-container .social-buttons-container button:hover {
+  background-color: #f1bce3;
+  color: #fff;
+}
+/* ----------------- ForgotPassword -------------*/
+.fg_pass{
+  text-align: center;
+  font-size: 28px;
+  max-width: 350px;
+  margin: auto;
+  padding: 0 10px;
+}
+.inp{
+  padding: 8px 100px;
+  font-size: 1rem;
+  max-width: 350px;
+  margin: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  outline: none;
+}
+
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 2rem;
+}
+
+.input-icon svg {
+  position: absolute;
+  left: 0.3rem;
+}
+/*Responsive layout */
+@media(max-width:768){
+  .registration-form-container{
+    max-width: 90%;
+    margin: auto;
+  }
+}
+
+.PhoneInputInput {
+	margin-top: 4px;
+	min-width: 0;
+}
+
+.password-input-flex {
+  display: flex;
+  align-items: center;
+}
+
+.password-input-flex input {
+  flex: 1;
+}
+.input-group-text{
+  background-color: transparent !important;
+  border: none !important;
+  
+}

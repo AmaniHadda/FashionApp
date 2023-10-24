@@ -1,0 +1,99 @@
+.product__item__text button {
+	font-size: 15px;
+	color: #f79ae0;
+  border: none;
+  background: none;
+	font-weight: 700;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+
+}
+.product__item:hover .product__item__text button {
+	top: 22px;
+	opacity: 1;
+	visibility: visible;
+}
+.product__item:hover .a {
+  opacity: 0;
+  visibility: hidden;
+}
+.a{
+  color: #111111;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+.shop__sidebar {
+	padding-right: 20px;
+}
+
+.shop__sidebar__search {
+	margin-bottom: 45px;
+}
+
+.shop__sidebar__search  {
+	position: relative;
+}
+
+.shop__sidebar__search  input {
+	width: 100%;
+	font-size: 15px;
+	color: #b7b7b7;
+	padding-left: 20px;
+	border: 1px solid #e5e5e5;
+	height: 42px;
+}
+
+.shop__sidebar__search  input::-webkit-input-placeholder {
+	color: #b7b7b7;
+}
+
+.shop__sidebar__search  input::-moz-placeholder {
+	color: #b7b7b7;
+}
+
+.shop__sidebar__search  input:-ms-input-placeholder {
+	color: #b7b7b7;
+}
+
+.shop__sidebar__search  input::-ms-input-placeholder {
+	color: #b7b7b7;
+}
+
+.shop__sidebar__search  input::placeholder {
+	color: #b7b7b7;
+}
+
+.shop__sidebar__search  i {
+	color: #b7b7b7;
+	font-size: 18px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	padding: 0 15px;
+	padding-top: 13px;
+	top: 0;
+	height: 100%;
+}
+.label{
+  color: #ffffff;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 4px 15px 2px;
+	background: #000000;
+	position: absolute;
+	left: 0;
+	top: 20px;
+}

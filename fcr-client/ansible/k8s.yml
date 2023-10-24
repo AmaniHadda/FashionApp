@@ -1,0 +1,62 @@
+---
+- name: Deploy application on Kubernetes
+  hosts: all
+  gather_facts: false
+  become: yes
+  tasks:
+    - name: Create deployment
+      k8s:
+        api_version: apps/v1
+        kind: Deployment
+        name: my-deployment-fcr-client
+        namespace: ordear
+        definition:
+          metadata:
+            labels:
+              app: fcr-client
+          spec:
+            replicas: 1
+            selector:
+              matchLabels:
+                app: fcr-client
+            template:
+              metadata:
+                labels:
+                  app: fcr-client
+              spec:
+                containers:
+                  - name: fcr-front-test
+                    image: riadhbellazreg/frontclient:fcr-front-test
+                    imagePullPolicy: Always
+                    ports:
+                      - containerPort: 3000
+
+        
+
+                    # resources :
+                    #   requests:
+                    #     memory: "1Gi"
+                    #     cpu: "0.5"
+                    #   limits: 
+                    #     memory: "1.5Gi"
+                    #     cpu: "1"
+                        
+    - name: Create service
+      k8s:
+        api_version: v1
+        kind: Service
+        name: my-service-fcr-client
+        namespace: ordear
+        definition:
+          metadata:
+            labels:
+              app: fcr-client
+          spec:
+            selector:
+              app: fcr-client
+            ports:
+              - protocol: TCP
+                port: 3030
+                targetPort: 3000
+                #31981
+            type: LoadBalancer

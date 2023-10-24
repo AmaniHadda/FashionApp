@@ -1,0 +1,231 @@
+def getGitBranchName() { 
+    return scm.branches[0].name
+}
+
+def branchName
+def targetBranch
+
+pipeline {
+    agent any
+
+     environment {
+        DOCKERHUB_USERNAME = "riadhbellazreg"
+        DEV_TAG = "${DOCKERHUB_USERNAME}/fcr:fcr-dev"
+        STAGING_TAG = "${DOCKERHUB_USERNAME}/fcr:fcr-staging"
+        PROD_TAG = "${DOCKERHUB_USERNAME}/fcr:fcr-prod"
+    }
+
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: "${scm.branches[0].name}", description: 'Git branch name')
+        string(name: 'CHANGE_ID', defaultValue: '', description: 'Git change ID for merge requests')
+        string(name: 'CHANGE_TARGET', defaultValue: '', description: 'Git change ID for the target merge requests')
+    }
+
+    stages {
+
+	stage('branch name') {
+            steps {
+                script {
+                    branchName = params.BRANCH_NAME
+                    echo "Current branch name: ${branchName}"
+                }
+            }
+        }
+	    
+	stage('target branch') {
+            steps {
+                script {
+                    targetBranch = branchName
+                    echo "Current branch name: ${targetBranch}"
+                }
+            }
+        }
+	    
+        stage('Git Checkout') {
+            steps {
+                git branch: 'devops', credentialsId: '76ad17a0-fbdd-4e27-a738-aae7230a9c5d', url: 'https://github.com/ipactconsult/fcr-backend-app'
+                echo 'GIT CHECKOUT DONE !!!!!!!!'
+		echo "Current branch name: ${branchName}"
+                echo "Current branch name: ${targetBranch}"
+            }
+        }
+
+        stage('Clean Build') {
+            steps {
+                sh 'rm -rf node_modules'
+                echo 'CLEAN BUILD DONE !!!!!!!!!'
+            }
+        }
+
+        stage('Install dependencies') {
+            steps {
+                nodejs('nodeJSInstallationName') {
+                    
+                    sh 'npm install --legacy-peer-deps'
+                    sh 'npm install webpack --legacy-peer-deps'
+                }
+            }
+        }
+	    stage('Run Backend Tests') {
+            steps {
+                // Execute backend tests using Jest
+		    // sh' npm start'
+      //          	    sh 'npm test test/*'
+		    // sh 'npm run test test/*.js exit' // Adjust timeout as needed
+		    echo "test"
+            }
+        }
+
+	//     stage('Static Test with Sonar') {
+	// 	    when {
+ //                expression {
+ //                    (params.CHANGE_ID != null) && ((targetBranch == 'develop') || (targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'devops'))
+ //                }
+ //            }
+ //             steps{
+ //                nodejs('nodeJSInstallationName'){
+ //                    sh 'node sonar-project.js'
+ //                }
+ //            }
+	// }
+	
+
+        stage('Docker Login') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: '23718919-cefd-45a2-a6b8-3b5a54dbdd44', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                    sh "docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}"
+			echo 'haya '
+			echo "${targetBranch}"
+			echo "${params.CHANGE_ID}"
+                }
+            }
+        }
+
+        
+        stage('Build Docker') {
+            when {
+                expression {
+                    (params.CHANGE_ID != null)  && ((targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'develop') || (targetBranch == 'devops'))
+                }
+            }
+           steps {
+        
+                script {
+                    if (targetBranch == 'staging') {
+                        sh "docker build -t ${DOCKERHUB_USERNAME}/fcr:fcr-staging ."
+                    } else if (targetBranch == 'main') {
+                        sh "docker build -t ${DOCKERHUB_USERNAME}/fcr:fcr-prod ."
+                    } else if (targetBranch == 'develop') {
+                        sh "docker build -t ${DOCKERHUB_USERNAME}/fcr:fcr-dev ."
+                    } else if (targetBranch == 'devops') {
+                        sh "docker build -t riadhbellazreg/fcr:fcr-test ."
+			    
+                    }
+                    
+                }
+            }
+        }
+
+
+        stage('Docker Push'){
+	when {
+       	     expression {
+          	(params.CHANGE_ID != null)  && ((targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'develop') || (targetBranch == 'devops'))
+        }
+    }
+            steps{
+                sh 'docker push $DOCKERHUB_USERNAME/fcr --all-tags '
+            }
+        }
+	stage('Remove Containers') {
+		when {
+        expression {
+          (params.CHANGE_ID != null)  && ((targetBranch == 'main') || (targetBranch == 'staging') || (targetBranch == 'develop') || (targetBranch == 'devops'))
+        }
+    }
+		steps {
+        sh '''
+        container_ids=$(docker ps -q --filter "publish=8082/tcp")
+        if [ -n "$container_ids" ]; then
+            echo "Stopping and removing containers..."
+            docker stop $container_ids
+            docker rm -f $container_ids
+        else
+            echo "No containers found using port 8082."
+        fi
+	docker rmi $(docker images -q $DOCKERHUB_USERNAME/fcr)
+        '''
+	// sh 'docker stop test'
+	// sh 'docker rm test'
+    }
+}
+	 //    stage('Deploy to k8s') {
+		//      when {
+  //               expression {
+		// 	(params.CHANGE_ID != null)  && (targetBranch == 'devops')
+		// }
+  //           }
+		//     steps {
+		// 	    sh "
+        
+
+
+        stage('Deploy to Prod') {
+            when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'main')
+		}
+            }
+           steps {
+		sh "docker pull ${PROD_TAG}"
+   		sh "docker run -d --name fcr-prod -p 8082:8082 ${PROD_TAG}"
+		   // sh "docker run -p 8082:8082 riadhbellazreg/fcr:prod"
+
+	   }
+	}
+
+
+	stage('Deploy to Dev') {
+            when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'develop')
+		}
+            }
+            steps {
+		// sh "docker pull ${DEV_TAG}"
+  //               sh "docker run -d --name fcr-dev -p 8082:8082 ${DEV_TAG}"
+		    sh "sudo ansible-playbook ansible/k8s.yml -i ansible/inventory/host.yml"
+            }
+        }
+
+        stage('Deploy to Staging') {
+            when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'staging')
+		}
+            }
+            steps {
+		sh "docker pull ${STAGING_TAG}"
+                sh "docker run -d --name fcr-staging -p 8082:8082 ${STAGING_TAG} ."
+            }
+        }
+	    
+        stage('Deploy to backend') {
+            when {
+                expression {
+			(params.CHANGE_ID != null)  && (targetBranch == 'devops')
+		}
+            }
+            steps {
+		
+		// sh "docker pull riadhbellazreg/fcr:fcr-test"
+		// sh "docker run -d --name fcr-test -p 8082:5002 riadhbellazreg/fcr:fcr-test"
+		sh "sudo ansible-playbook ansible/k8s.yml -i ansible/inventory/host.yml"
+
+                // sh "docker run -d --name test -p 8083:8083 ${STAGING_TAG}-test"
+            }
+        }
+    }
+}
+
+

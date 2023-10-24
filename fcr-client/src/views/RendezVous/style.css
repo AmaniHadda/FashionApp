@@ -1,0 +1,100 @@
+.react-calendar { 
+  width: 400px;
+  max-width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+ }
+ .react-calendar__navigation button {
+  color: #f1bce3;
+  font-weight: bold;
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+ }
+ .react-calendar__navigation button:enabled:hover,
+ .react-calendar__navigation button:enabled:focus {
+  background-color: #f8f8fa;
+ }
+ .react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+ }
+ abbr[title] {
+  text-decoration: none;
+ }
+ .react-calendar__month-view__days__day--weekend {
+  color: #000000;
+ }
+ .react-calendar__tile:enabled:hover,
+ .react-calendar__tile:enabled:focus {
+  background: #f8f8fa;
+  color: #f1bce3;
+  border-radius: 100px;
+ }
+ .react-calendar__tile--now {
+  background: #b12b72;
+  padding: 10px 6px;
+  border-radius: 200px;
+  font-weight: bold;
+  color: white;
+ }
+ /* .react-calendar__tile--now:enabled:hover,
+ .react-calendar__tile--now:enabled:focus {
+  background: #f1bce3;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #f1bce3;
+ } */
+ .react-calendar__tile--hasActive:enabled:hover,
+ .react-calendar__tile--hasActive:enabled:focus {
+  background: #f8f8fa;
+ }
+ .react-calendar__tile--active {
+  background: #f1bce3;
+  padding: 10px 6px;
+  border-radius: 200px;  
+  font-weight: bold;
+  color: white;
+ }
+ .react-calendar__tile--active:enabled:hover,
+ .react-calendar__tile--active:enabled:focus {
+  background: #f1bce3;
+  color: white;
+  padding: 10px 6px;
+  border-radius: 200px;
+}
+
+.custom-input input {
+  border: 1px solid #bdb6ba !important;
+  font-weight: bolder;
+  width: 50px;
+}
+.custom-input input:focus {
+  border: 2px solid #f29ece !important;
+  font-weight: bolder;
+  width: 50px;
+}
+.custom-input1 input {
+  border: 1px solid #bdb6ba !important;
+  font-weight: bolder;
+  width: 350px;
+  height: 50px;   
+}
+.custom-input1 input:focus {
+  border: 2px solid #f29ece !important;
+  font-weight: bolder;
+  width: 350px;
+  box-shadow: none;
+  outline: none;
+}
+@media only screen and (max-width: 991px){
+  .custom-input1 input{
+    width: 250px !important;
+  }
+  .custom-input input{
+    width: 42px !important;
+  }
+}

@@ -1,0 +1,96 @@
+{
+    "topNavbar": {
+    "qr": "Digitalize o código QR para obter mais descontos",
+    "register": "Registe-se e obtenha um desconto de 20% na sua locação",
+    "compte": "A Minha Conta",
+    "cnx": "Iniciar sessão",
+    "dcnx": "Terminar sessão",
+    "ins": "Registo",
+    "mp": "Esqueci a palavra-passe"
+    },
+    "navbar": {
+    "Accueil": "Página Inicial",
+    "Abonnements": "Subscrições",
+    "Habillements": "Vestuário",
+    "Comment": "Como Funciona",
+    "Rendez-Vous": "Marcações"
+    },
+    "about": {
+    "Portez": "Vista, Devolva, Repita!",
+    "Desc": "A Tavyissa é um serviço de aluguer de roupa em forma de caixa por subscrição que lhe permite renovar o seu guarda-roupa continuamente.",
+    "Comment": "Como Funciona"
+    },
+    "help": {
+    "Comment": "Como alugar"
+    },
+    "Abonnements": {
+    "abnm": "As Nossas Subscrições",
+    "formule": "Fórmula Inspirada",
+    "reduction": "Sem Desconto",
+    "btn": "Ver Mais"
+    },
+    "LastBrand": {
+    "tendance": "Última Tendência",
+    "btn": "Ver Detalhes"
+    },
+    "RecemmentVu": {
+    "Vu": "Visto Recentemente",
+    "btn": "Ver Detalhes"
+    },
+    "Footer": {
+    "Appelez": "Ligue-nos",
+    "Suivez": "Siga-nos",
+    "Notre": "A Nossa Loja",
+    "Recevez": "Receba as nossas últimas notícias",
+    "insc": "Subscreva a nossa newsletter",
+    "contact": "Contacte-nos:",
+    "cop": "Todos os direitos reservados. Este site foi desenvolvido por"
+    },
+    "Habillements": {
+    "title1": "Aluguer de Vestuário",
+    "title2": "Luxo ao Alcance de Todos!",
+    "Saison": "Estação",
+    "Taille": "Tamanho",
+    "Pointure": "Tamanho do Sapato",
+    "Prix": "Preço",
+    "Marque": "Marca",
+    "Effacer": "Limpar"
+    },
+    "Aide": {
+    "title": "Como Funciona o Aluguer de Roupa?",
+    "c1": "Como funciona o serviço de aluguer MAJE?",
+    "desc1": "Este é o conteúdo recolhível. Pode ser qualquer elemento ou componente React que desejar.",
+    "desc2": "Pode até ser outro componente Collapsible. Veja a próxima secção!",
+    "c2": "Quando posso alugar a minha roupa?",
+    "desc3": "Pode alugar a sua roupa quando quiser, até",
+    "desc4": "6 meses antes da data do seu evento.",
+    "desc5": "Garantimos que os produtos estarão disponíveis no máximo no dia em que começa o aluguer.",
+    "desc6": "Sinta-se à vontade para escolher a entrega Express (em até 3 dias úteis) se tiver pressa.",
+    "c3": "Quando posso alugar a minha roupa?",
+    "desc7": "Este é o conteúdo recolhível. Pode ser qualquer elemento ou componente React que desejar.",
+    "desc8": "Pode até ser outro componente Collapsible. Veja a próxima secção!",
+    "c4": "Como utilizar o meu código privilegiado?",
+    "desc9": "Este é o conteúdo recolhível. Pode ser qualquer elemento ou componente React que desejar.",
+    "desc10": "Pode até ser outro componente Collapsible. Veja a próxima secção!"
+    },
+    "RendezVous": {
+    "title": "A nossa equipa está ansiosa para o conhecer",
+    "calend1": "Agendar uma Marcação",
+    "calend2": "Escolha uma Data",
+    "map1": "A Nossa Loja de Aluguer",
+    "map2": "O nosso Showroom está localizado na Rua de Courcelles, 45, 75008 Paris, e funciona mediante marcação, sem interrupção, de segunda a sábado a partir das"
+    },
+    "button":{
+        "btn":"Eu começo",
+        "btn1":"Última tendência",
+        "btn2":"Visualizado recentemente",
+        "btn3":"enviar"
+    }
+    }
+    
+    
+    
+    
+    
+    
+    

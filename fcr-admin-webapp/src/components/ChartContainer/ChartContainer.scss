@@ -1,0 +1,12 @@
+.chartContainer {
+  display: grid;
+
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  .lineChart,
+  .barChat {
+    background: var(--white);
+    box-shadow: var(--shadow);
+  }
+}

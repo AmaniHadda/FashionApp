@@ -1,0 +1,17 @@
+.inf-content{
+  border:1px solid #DDDDDD;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+}	
+	
+.hover-image {
+  width: 500%;
+  height: 500%;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover .hover-image {
+  transform: scale(2.3); 
+}

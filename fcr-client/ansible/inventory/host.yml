@@ -1,0 +1,4 @@
+[webservers]
+k8smaster ansible_host=185.192.96.18 ansible_port=50000
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

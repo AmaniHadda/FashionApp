@@ -1,0 +1,11 @@
+.chartContainer {
+  display: grid;
+  height: 350px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.chartContainer .lineChart,
+.chartContainer .barChat {
+  background: var(--white);
+  box-shadow: var(--shadow);
+}/*# sourceMappingURL=ChartContainer.css.map */

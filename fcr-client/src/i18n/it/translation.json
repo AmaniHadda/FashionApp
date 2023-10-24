@@ -1,0 +1,89 @@
+{
+    "topNavbar": {
+    "qr": "Scansiona il codice QR per ulteriori sconti",
+    "register": "Registrati e ottieni uno sconto del 20% sul tuo noleggio",
+    "compte": "Il mio Account",
+    "cnx": "Accedi",
+    "dcnx": "Disconnetti",
+    "ins": "Iscriviti",
+    "mp": "Password dimenticata"
+    },
+    "navbar": {
+    "Accueil": "accoglienza",
+    "Abonnements": "Abbonamenti",
+    "Habillements": "Abbigliamento",
+    "Comment": "Come Funziona",
+    "Rendez-Vous": "Appuntamenti"
+    },
+    "about": {
+    "Portez": "Indossa, Restituisci, Ripeti!",
+    "Desc": "Tavyissa è un servizio di noleggio di abbigliamento a forma di box tramite abbonamento che ti consente di rinnovare il tuo guardaroba in modo continuo.",
+    "Comment": "Come Funziona"
+    },
+    "help": {
+    "Comment": "Come Noleggiare"
+    },
+    "Abonnements": {
+    "abnm": "I Nostri Abbonamenti",
+    "formule": "Formula Ispirata",
+    "reduction": "Senza Sconto",
+    "btn": "Vedi di più"
+    },
+    "LastBrand": {
+    "tendance": "Ultima Tendenza",
+    "btn": "Dettagli"
+    },
+    "RecemmentVu": {
+    "Vu": "Visto di Recente",
+    "btn": "Dettagli"
+    },
+    "Footer": {
+    "Appelez": "Chiamaci",
+    "Suivez": "Seguici",
+    "Notre": "Il Nostro Negozio",
+    "Recevez": "Ricevi le nostre ultime notizie",
+    "insc": "Iscriviti alla newsletter",
+    "contact": "Contattaci:",
+    "cop": "Tutti i diritti riservati. Sito sviluppato da"
+    },
+    "Habillements": {
+    "title1": "Noleggio di Abbigliamento",
+    "title2": "Lusso alla portata di tutti!",
+    "Saison": "Stagione",
+    "Taille": "Taglia",
+    "Pointure": "Misura delle Scarpe",
+    "Prix": "Prezzo",
+    "Marque": "Marca",
+    "Effacer": "Cancella"
+    },
+    "Aide": {
+    "title": "Come funziona il noleggio di abbigliamento?",
+    "c1": "Come funziona il servizio di noleggio di MAJE?",
+    "desc1": "Questo è il contenuto espandibile. Può essere qualsiasi elemento o componente React che desideri.",
+    "desc2": "Può anche essere un altro componente Collapsible. Dai un'occhiata alla sezione successiva!",
+    "c2": "Quando posso noleggiare il mio outfit?",
+    "desc3": "Puoi noleggiare il tuo outfit quando vuoi, fino a",
+    "desc4": "6 mesi prima della data del tuo evento.",
+    "desc5": "Ci impegniamo a rendere i prodotti disponibili al più tardi il giorno in cui inizia il tuo noleggio.",
+    "desc6": "Non esitare a optare per la consegna Express (entro 3 giorni lavorativi) se hai fretta.",
+    "c3": "Quando posso noleggiare il mio outfit?",
+    "desc7": "Questo è il contenuto espandibile. Può essere qualsiasi elemento o componente React che desideri.",
+    "desc8": "Può anche essere un altro componente Collapsible. Dai un'occhiata alla sezione successiva!",
+    "c4": "Come posso utilizzare il mio codice privilegio?",
+    "desc9": "Questo è il contenuto espandibile. Può essere qualsiasi elemento o componente React che desideri.",
+    "desc10": "Può anche essere un altro componente Collapsible. Dai un'occhiata alla sezione successiva!"
+    },
+    "RendezVous": {
+    "title": "Il nostro team non vede l'ora di incontrarti",
+    "calend1": "Prenota un Appuntamento",
+    "calend2": "Seleziona una Data",
+    "map1": "Il nostro Negozio di Noleggio",
+    "map2": "Il nostro Showroom si trova in Via Courcelles, 45, 75008 Parigi, e opera su appuntamento senza interruzioni dal lunedì al sabato, dalle"
+    },
+    "button":{
+        "btn":"Io inizio",
+        "btn1":"Ultima tendenza",
+        "btn2":"Visualizzato recentemente",
+        "btn3": "Inviare"
+    }
+    }

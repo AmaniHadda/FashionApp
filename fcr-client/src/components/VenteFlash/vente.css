@@ -1,0 +1,140 @@
+.categories {
+	overflow: hidden;
+	padding-top: 150px;
+	padding-bottom: 125px;
+}
+
+.categories__text {
+	padding-top: 40px;
+	position: relative;
+	z-index: 1;
+}
+
+.categories__text:before {
+	position: absolute;
+	left: -485px;
+	top: 0;
+	height: 300px;
+	width: 600px;
+	background: #f224b816;
+	z-index: -1;
+	content: "";
+}
+
+.categories__text h2 {
+	color: #b7b7b7;
+	line-height: 72px;
+	font-size: 34px;
+}
+
+.categories__text h2 span {
+	font-weight: 700;
+	color: #111111;
+}
+
+.categories__hot__deal {
+	position: relative;
+	z-index: 5;
+}
+
+.categories__hot__deal img {
+	min-width: 100%;
+}
+.spad {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.categories__deal__countdown span {
+	color: #e53637;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.categories__deal__countdown h2 {
+	color: #111111;
+	font-weight: 700;
+	line-height: 46px;
+	margin-bottom: 25px;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer {
+	margin-bottom: 20px;
+	overflow: hidden;
+	margin-left: -30px;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer .cd-item {
+	width: 25%;
+	float: left;
+	margin-bottom: 25px;
+	text-align: center;
+	position: relative;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer .cd-item:after {
+	position: absolute;
+	right: 0;
+	top: 7px;
+	content: ":";
+	font-size: 24px;
+	font-weight: 700;
+	color: #3d3d3d;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer .cd-item:last-child:after {
+	display: none;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer .cd-item span {
+	color: #111111;
+	font-weight: 700;
+	display: block;
+	font-size: 36px;
+}
+
+.categories__deal__countdown .categories__deal__countdown__timer .cd-item p {
+	margin-bottom: 0;
+}
+.categories__deal__countdown .categories__deal__countdown__timer {
+    margin-left: 0;
+}
+
+.hot__deal__sticker {
+	height: 100px;
+	width: 100px;
+	background: #111111;
+	border-radius: 50%;
+	padding-top: 22px;
+	text-align: center;
+	position: absolute;
+	right: -4px;
+	top: -36px;
+}
+
+.hot__deal__sticker span {
+	display: block;
+	font-size: 15px;
+	color: #ffffff;
+	margin-bottom: 4px;
+}
+
+.hot__deal__sticker h5 {
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.categories__deal__countdown span {
+	color: #e53637;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+	display: block;
+}

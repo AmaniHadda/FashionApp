@@ -1,0 +1,93 @@
+.app__sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  background: var(--white);
+  z-index: 1;
+  transition: var(--trans);
+  border-right: var(--border);
+  padding: 2rem;
+}
+.app__sidebar .sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app__sidebar .sidebar__header p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.app__sidebar .sidebar__header p span {
+  color: palevioletred;
+}
+.app__sidebar .sidebar__routes {
+  margin-top: 2rem;
+}
+.app__sidebar .sidebar__routes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.app__sidebar .sidebar__routes ul li a {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  transition: var(--trans);
+  border-radius: 5px;
+}
+.app__sidebar .sidebar__routes ul li a svg {  
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+.app__sidebar .sidebar__routes ul li a:hover {
+  background: palevioletred;
+}
+.app__sidebar .sidebar__routes ul li a.active {
+  background: palevioletred;
+}
+.app__sidebar .sidebar__routes .user__profile__container {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  margin-top: 3rem;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  padding: 1rem;
+  gap: 1rem;
+}
+.app__sidebar .sidebar__routes .user__profile__container .user__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app__sidebar .sidebar__routes .user__profile__container .user__container img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 1rem;
+}
+.app__sidebar .sidebar__routes .user__profile__container .user__container p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.app__sidebar .sidebar__routes .user__profile__container .profile__link {
+  background: var(--light);
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  transition: var(--trans);
+}
+.app__sidebar .sidebar__routes .user__profile__container .profile__link:hover {
+  background: palevioletred;
+}
+.app__sidebar .sidebar__routes .user__profile__container .profile__link.active {
+  background: palevioletred;
+}/*# sourceMappingURL=Sidebar.css.map */

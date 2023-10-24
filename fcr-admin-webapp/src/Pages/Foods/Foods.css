@@ -1,0 +1,37 @@
+.app__foods {
+  background: var(--light);
+  min-height: 100vh;
+}
+.app__foods .foods__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 2rem;
+}
+.app__foods .foods__container .food__container {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  border-radius: 5px;
+  transition: var(--trans);
+  cursor: pointer;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.app__foods .foods__container .food__container img {
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.app__foods .foods__container .food__container p {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.app__foods .foods__container .food__container span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--yellow);
+}/*# sourceMappingURL=Foods.css.map */

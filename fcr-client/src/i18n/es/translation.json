@@ -1,0 +1,96 @@
+{
+    "topNavbar": {
+    "qr": "Escanea el código QR para obtener más descuentos",
+    "register": "Regístrate y obtén un descuento del 20% en tu renta",
+    "compte": "Mi Cuenta",
+    "cnx": "Iniciar sesión",
+    "dcnx": "Cerrar sesión",
+    "ins": "Registro",
+    "mp": "Contraseña olvidada"
+    },
+    "navbar": {
+    "Accueil": "Inicio",
+    "Abonnements": "Suscripciones",
+    "Habillements": "Ropa",
+    "Comment": "Cómo Funciona",
+    "Rendez-Vous": "Citas"
+    },
+    "about": {
+    "Portez": "¡Viste, Devuelve, Repite!",
+    "Desc": "Tavyissa es un servicio de alquiler de ropa en forma de caja por suscripción que te permite renovar tu guardarropa de forma continua.",
+    "Comment": "Cómo Funciona"
+    },
+    "help": {
+    "Comment": "Cómo alquilar"
+    },
+    "Abonnements": {
+    "abnm": "Nuestras Suscripciones",
+    "formule": "Fórmula Inspirada",
+    "reduction": "Sin Descuento",
+    "btn": "Ver más"
+    },
+    "LastBrand": {
+    "tendance": "Última Tendencia",
+    "btn": "Ver detalles"
+    },
+    "RecemmentVu": {
+    "Vu": "Visto Recientemente",
+    "btn": "Ver detalles"
+    },
+    "Footer": {
+    "Appelez": "Llámanos",
+    "Suivez": "Síguenos",
+    "Notre": "Nuestra Tienda",
+    "Recevez": "Recibe nuestras últimas noticias",
+    "insc": "Suscríbete al boletín",
+    "contact": "Contáctanos:",
+    "cop": "Todos los derechos reservados. Este sitio web fue desarrollado por"
+    },
+    "Habillements": {
+    "title1": "Alquiler de Ropa",
+    "title2": "¡Lujo al alcance de todos!",
+    "Saison": "Temporada",
+    "Taille": "Talla",
+    "Pointure": "Talla de Calzado",
+    "Prix": "Precio",
+    "Marque": "Marca",
+    "Effacer": "Borrar"
+    },
+    "Aide": {
+    "title": "¿Cómo funciona el alquiler de ropa?",
+    "c1": "¿Cómo funciona el servicio de alquiler de MAJE?",
+    "desc1": "Este es el contenido desplegable. Puede ser cualquier elemento o componente React que desees.",
+    "desc2": "Incluso puede ser otro componente Collapsible. ¡Mira la siguiente sección!",
+    "c2": "¿Cuándo puedo alquilar mi atuendo?",
+    "desc3": "Puedes alquilar tu atuendo cuando quieras, hasta",
+    "desc4": "6 meses antes de la fecha de tu evento.",
+    "desc5": "Garantizamos que los productos estarán disponibles a más tardar el día en que comienza tu alquiler.",
+    "desc6": "Si tienes prisa, no dudes en elegir el envío Express (en un plazo de 3 días hábiles).",
+    "c3":"¿Cuándo puedo alquilar mi atuendo?",
+    "desc7": "Este es el contenido desplegable. Puede ser cualquier elemento o componente React que desees.",
+    "desc8": "Incluso puede ser otro componente Collapsible. ¡Mira la siguiente sección!",
+    "c4": "¿Cómo puedo usar mi código de privilegio?",
+    "desc9": "Este es el contenido desplegable. Puede ser cualquier elemento o componente React que desees.",
+    "desc10": "Incluso puede ser otro componente Collapsible. ¡Mira la siguiente sección!"
+    },
+    "RendezVous": {
+    "title": "Nuestro equipo está emocionado de conocerte",
+    "calend1": "Programar una Cita",
+    "calend2": "Elige una Fecha",
+    "map1": "Nuestra Tienda de Alquiler",
+    "map2": "Nuestro Showroom está ubicado en la calle de Courcelles, 45, 75008 París, y opera con cita previa sin interrupción de lunes a sábado desde"
+    },
+    "button":{
+        "btn":"Yo comienzo",
+        "btn1":"Última tendencia",
+        "btn2":"Visto recientemente",
+        "btn3":"enviar"
+    }
+    }
+    
+    
+    
+    
+    
+    
+    

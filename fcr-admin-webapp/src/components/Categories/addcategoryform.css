@@ -1,0 +1,27 @@
+.add-category-form {
+   
+    max-width: 400px;
+    margin-left: 900px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    padding: 8px 16px;
+
+    
+  }
+  

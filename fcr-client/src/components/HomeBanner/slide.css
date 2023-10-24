@@ -1,0 +1,24 @@
+
+  /* customCarousel.css */
+  
+  /* Set the transition properties for smooth image transitions */
+  .carousel-item {
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    /* Set the initial opacity to 0 for a fade-in effect */
+    .carousel-item:not(.active) {
+      opacity: 0;
+    }
+    
+    /* Increase the z-index for the active carousel item to make it appear above others */
+    .carousel-item.active {
+      z-index: 1;
+    }
+    
+    /* Apply a cross-fade effect between the active and next carousel items */
+    .carousel-fade .active.carousel-item + .carousel-item {
+      opacity: 0;
+      z-index: 0;
+    }
+    

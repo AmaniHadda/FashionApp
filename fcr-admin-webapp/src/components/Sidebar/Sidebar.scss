@@ -1,0 +1,138 @@
+.app__sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  background: var(--white);
+  z-index: 1;
+  transition: var(--trans);
+  border-right: var(--border);
+  padding: 1rem;
+
+  .sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+
+    svg {
+      color:palevioletred;
+      margin-right: 1rem;
+      height: 40px;
+      width: 40px;
+      border-radius: 5px;
+      padding: 5px;
+      background: var(--light);
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      span {
+        color: palevioletred;
+      }
+    }
+  }
+
+  .sidebar__routes {
+    margin-top: 2rem;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 80vh;
+      overflow-y: auto;
+      scrollbar-width: thin; /* Pour les navigateurs récents */
+      scrollbar-color: #e6e3e3 #f0f0f0;
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          padding: 0.8rem;
+          transition: var(--trans);
+          border-radius: 5px;
+         
+          svg {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+          }
+
+          &:hover {
+            background: palevioletred;
+          }
+
+          &.active {
+            background: palevioletred;
+          }
+        }
+      }
+    }
+    ul::-webkit-scrollbar {
+      width: 8px; /* Largeur de la barre de défilement */
+    }
+    
+    ul::-webkit-scrollbar-thumb {
+      background-color: #888; /* Couleur de la barre de défilement */
+    }
+    
+    ul::-webkit-scrollbar-thumb:hover {
+      background-color: #555; /* Couleur de la barre de défilement au survol */
+    }
+    
+    ul::-webkit-scrollbar-track {
+      background-color: #f0f0f0; /* Couleur du fond de la barre de défilement */
+    }
+    .user__profile__container {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      margin-top: 3rem;
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      padding: 1rem;
+      gap: 1rem;
+
+      .user__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
+      }
+
+      .profile__link {
+        background: var(--light);
+        padding: 0.8rem 1rem;
+        border-radius: 5px;
+        text-align: center;
+        transition: var(--trans);
+
+        &:hover {
+          background: palevioletred;
+        }
+
+        &.active {
+          background: palevioletred;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.home__count {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.home__count .home__items {
+  background: var(--white);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  gap: 1rem;
+}
+.home__count .home__items .item__title {
+  color: var(--light_dark);
+}
+.home__count .home__items .item__count {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+.home__count .home__items .item__count p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.home__count .home__items .item__count svg {
+  color: rgb(0, 128, 94);
+}
+.home__count .home__items .item__count svg.down {
+  color: red;
+}
+.home__count .home__items .item__count span {
+  color: var(--light_dark);
+}/*# sourceMappingURL=HomeCount.css.map */

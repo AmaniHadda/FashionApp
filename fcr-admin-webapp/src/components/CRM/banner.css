@@ -1,0 +1,41 @@
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 1;
+}
+
+.icon-button {
+    position: relative;
+}
+
+.icon-hover {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: pink;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.icon-button:hover .icon-hover {
+    opacity: 1;
+}
+
+.custom-toast {
+    background-color: pink;
+}
+
+.custom-toast-body {
+    color: white;
+}
+.custom-toast1 {
+    background-color: rgb(150, 115, 115);
+}

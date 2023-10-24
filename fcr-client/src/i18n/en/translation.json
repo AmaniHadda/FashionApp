@@ -1,0 +1,89 @@
+{
+    "topNavbar": {
+    "qr": "Scan the QR code for more discounts",
+    "register": "Sign up and get a 20% discount for your rental",
+    "compte": "My Account",
+    "cnx": "Log In",
+    "dcnx": "Log Out",
+    "ins": "Sign Up",
+    "mp": "Forgot Password"
+    },
+    "navbar": {
+    "Accueil": "Home",
+    "Abonnements": "Subscriptions",
+    "Habillements": "Clothes",
+    "Comment": "How It Works",
+    "Rendez-Vous": "Appointments"
+    },
+    "about": {
+    "Portez": "Wear, Return, Repeat!",
+    "Desc": "Tavyissa is a subscription-based clothing rental service that allows you to continuously refresh your wardrobe.",
+    "Comment": "How It Works"
+    },
+    "help": {
+    "Comment": "How to Rent"
+    },
+    "Abonnements": {
+    "abnm": "Our Subscriptions",
+    "formule": "Inspired Formula",
+    "reduction": "Without Discount",
+    "btn": "See More"
+    },
+    "LastBrand": {
+    "tendance": "Latest Trend",
+    "btn": "See Details"
+    },
+    "RecemmentVu": {
+    "Vu": "Recently Viewed",
+    "btn": "See Details"
+    },
+    "Footer": {
+    "Appelez": "Call Us",
+    "Suivez": "Follow Us",
+    "Notre": "Our Store",
+    "Recevez": "Receive Our Latest News",
+    "insc": "Subscribe to Newsletter",
+    "contact": "Contact Us:",
+    "cop": "All rights reserved. This site is developed by"
+    },
+    "Habillements": {
+    "title1": "Clothing Rental",
+    "title2": "Luxury within Reach!",
+    "Saison": "Season",
+    "Taille": "Size",
+    "Pointure": "Shoe Size",
+    "Prix": "Price",
+    "Marque": "Brand",
+    "Effacer": "Clear"
+    },
+    "Aide": {
+    "title": "How Does Clothing Rental Work?",
+    "c1": "How does the MAJE rental service work?",
+    "desc1": "This is the collapsible content. It can be any element or React component you like.",
+    "desc2": "It can even be another Collapsible component. Check out the next section!",
+    "c2": "When can I rent my outfit?",
+    "desc3": "You can rent your outfit whenever you want, up to",
+    "desc4": "6 months before the date of your event.",
+    "desc5": "We guarantee that the products will be available no later than the day your rental starts.",
+    "desc6": "Feel free to choose Express delivery (within 3 business days) if you are in a hurry.",
+    "c3": "When can I rent my outfit?",
+    "desc7": "This is the collapsible content. It can be any element or React component you like.",
+    "desc8": "It can even be another Collapsible component. Check out the next section!",
+    "c4": "How do I use my privilege code?",
+    "desc9": "This is the collapsible content. It can be any element or React component you like.",
+    "desc10": "It can even be another Collapsible component. Check out the next section!"
+    },
+    "RendezVous": {
+    "title": "Our team is excited to meet you",
+    "calend1": "Schedule an Appointment",
+    "calend2": "Choose a Date",
+    "map1": "Our Rental Shop",
+    "map2": "Our Showroom is located at 45 rue de Courcelles, 75008 Paris and operates by appointment without interruption from Monday to Saturday from"
+    },
+    "button":{
+        "btn":"I begin",
+        "btn1":"Latest Trend",
+        "btn2":"Recently Viewed",
+        "btn3": "Send"
+    }
+    }

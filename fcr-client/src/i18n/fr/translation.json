@@ -1,0 +1,90 @@
+{
+    "topNavbar": {
+        "qr": "Scanner le QR code pour plus de remise",
+        "register": "Inscrivez-vous et bénéificier d'une remise de 20% pour votre location",
+        "compte": "Mon compte",
+        "cnx": "Connexion",
+        "dcnx": "Déconnexion",
+        "ins": "Inscription",
+        "mp": "Mot de passe oublié"
+    },
+    "navbar": {
+        "Accueil": "Accueil",
+        "Abonnements": "Abonnements",
+        "Habillements": "Habillements",
+        "Comment": "Comment ça marche",
+        "Rendez-Vous": "Rendez-Vous"
+    },
+    "about": {
+        "Portez": "Portez, Renvoyez, Recommencez !",
+        "Desc": "Tavyissa est un service de location sous forme de box par abonnement qui vous permet de renouveler votre garde-robe en continu.",
+        "Comment": "Comment ça marche "
+    },
+    "help": {
+        "Comment": "Comment louer"
+    },
+    "Abonnements": {
+        "abnm": "Nos abonnements",
+        "formule": "à la formule inspiré",
+        "reduction": "Sans réduction",
+        "btn": "Voir plus"
+    },
+    "LastBrand": {
+        "tendance": "Derniére Tendance",
+        "btn": "Voir détails"
+    },
+    "RecemmentVu": {
+        "Vu": "Récemment Vu",
+        "btn": "Voir détails"
+    },
+    "Footer": {
+        "Appelez": "Appelez-nous",
+        "Suivez": "Suivez nous",
+        "Notre": "Notre boutique",
+        "Recevez": "Recevez nos derniéres actualités",
+        "insc": "S'inscrire à la newsletter",
+        "contact": "Contactez-Nous:",
+        "cop": "Tous les droits sont réservés. Ce site est dévelopé par"
+    },
+    "Habillements": {
+        "title1": "Location de vêtemets",
+        "title2": "Le luxe à la portée de tous!",
+        "Saison": "Saison",
+        "Taille": "Taille",
+        "Pointure": "Pointure",
+        "Prix": "Prix",
+        "Marque": "Marque",
+        "Effacer": "Effacer"
+    },
+    "Aide": {
+        "title": "Comment fonctionne la location de vêtements ?",
+        "c1": "Comment fonctionne la service de location MAJE ?",
+        "desc1": "This is the collapsible content. It can be any element or React component you like.",
+        "desc2": "It can even be another Collapsible component. Check out the next section!",
+        "c2": "Quand puis-je louer ma tenue?",
+        "desc3": "Vous pouvez louer votre tenue quand vous le souhaitez,jusqu'à ",
+        "desc4": "6 mois avant la date de votre évènement.",
+        "desc5": "Nous nous engageons à ce que les produits soient disponibles au plus tard le jour de votre début de location.",
+        "desc6": "N'hésitez pas à opter pour la livraison Express (sous 3 jours ouvrés) si vous êtes pressé(e).",
+        "c3": "Quand puis-je louer ma tenue?",
+        "desc7": "This is the collapsible content. It can be any element or React component you like.",
+        "desc8": "It can even be another Collapsible component. Check out the next section!",
+        "c4": "Comment utiliser mon code privilége?",
+        "desc9": "This is the collapsible content. It can be any element or React component you like.",
+        "desc10": "It can even be another Collapsible component. Check out the next section!"
+    },
+    "RendezVous": {
+        "title": "Notre team a hâte de vous rencontrer",
+        "calend1": "Réservez votre rendez-vous",
+        "calend2": "Séléctionnez la date de votre préférence",
+        "map1": " Notre rental shop",
+        "map2": "Notre Showroom est situé au 45 rue de Courcelles, 75008 Paris et reçoit sur RDV sans interruption du lundi au samedi de"
+        
+    },
+    "button":{
+        "btn":"Je commence",
+        "btn1":"Dernière Tendance",
+        "btn2":"Récemment Vu",
+        "btn3": "Envoyer"
+    }
+}
